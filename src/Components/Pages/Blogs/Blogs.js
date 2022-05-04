@@ -1,7 +1,7 @@
 import React from 'react';
 import './Blogs.css';
 
-const Blog = () => {
+const Blogs = () => {
     return (
         <div>
             <h2>This is blogs</h2>
@@ -9,4 +9,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default Blogs;
