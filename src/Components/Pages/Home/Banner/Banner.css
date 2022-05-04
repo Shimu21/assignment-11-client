@@ -1,0 +1,21 @@
+.banner-bg {
+    background-color: rgb(186, 219, 231);
+}
+
+.banner-text h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.banner-text h5 {
+    font-weight: bold;
+}
+
+.banner-button {
+    background-color: lightpink;
+    border: 2px solid #222;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-top: 10px;
+    font-weight: bold;
+}
