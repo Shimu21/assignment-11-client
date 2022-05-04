@@ -6,8 +6,8 @@ const Service = (props) => {
     const { name, price, quantity, supplier, description, img } = props.service;
     return (
         <Col sm={12} md={4}>
-            <Card className='shadow-sm'>
-                <Card.Img variant="top" className='card-img' src={img} />
+            <Card className='shadow-sm my-3 p-3'>
+                <img className='img-fluid card-img' src={img} alt="" />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
