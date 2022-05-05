@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import './Service.css';
 
 const Service = (props) => {
@@ -18,7 +18,7 @@ const Service = (props) => {
                         <p><small>Quantity: {quantity}</small></p>
                         <p><small>Supplier: {supplier}</small></p>
                     </div>
-                    <Button>Go somewhere</Button>
+                    <button className='service-btn'>Go somewhere</button>
                 </Card.Body>
             </Card>
         </Col>

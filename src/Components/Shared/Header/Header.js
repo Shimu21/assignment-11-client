@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar className='nabvar-bg' collapseOnSelect expand="lg">
+        <Navbar className='nabvar-bg' collapseOnSelect>
             <Container>
                 <Navbar.Brand href="#home">
                     <img className='img-fluid' src="https://htmldemo.net/kidol/kidol/assets/img/logo.png" alt="" />
@@ -18,8 +18,8 @@ const Header = () => {
                         <Nav.Link className='link-style' as={Link} to="/blogs">Blogs</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className='link-style login-button' as={Link} to="/signIn">Sign In</Nav.Link>
-                        <Nav.Link className='link-style login-button' as={Link} to="/signOut">Sign Out</Nav.Link>
+                        <Nav.Link className='link-style login-button' as={Link} to="/login">Sign In</Nav.Link>
+                        <Nav.Link className='link-style login-button' as={Link} to="/register">Sign Out</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

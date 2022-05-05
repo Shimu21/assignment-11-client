@@ -2,3 +2,10 @@
     height: 150px !important;
     margin-bottom: 10px;
 }
+
+.service-btn {
+    background-color: lightpink;
+    border: 2px solid #222;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
