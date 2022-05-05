@@ -1,31 +1,52 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Register.css';
-import { FaUserAlt, FaSignInAlt } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
+
 
 const Register = () => {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const ConfirmPasswordRef = useRef();
+
+
+
+    const handleSignUpSubmit = (event) => {
+        event.preventDefault();
+
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        const confirmPassword = ConfirmPasswordRef.current.value;
+
+        console.log(email, password, confirmPassword);
+
+    };
+
     return (
-        <div>
-            <form className='shadow'>
-                <div className="input_box">
-                    <span><FaUserAlt /></span>
-                    <input type="text" placeholder="User Name" required />
+        <div className='form-container'>
+            <div className='input-container shadow-sm'>
+                <div className='p-5'>
+                    <h2 className='form-title'>Register</h2>
+
+                    <form className='p-3' onSubmit={handleSignUpSubmit}>
+                        <div className='input-group'>
+                            <label htmlFor="email">Email</label>
+                            <input ref={emailRef} type="email" name='email' placeholder='Enter your email' required />
+                        </div>
+
+                        <div className='input-group'>
+                            <label htmlFor="password">Password</label>
+                            <input ref={passwordRef} type="password" name='password' placeholder='Enter your password' required />
+                        </div>
+
+                        <div className='input-group'>
+                            <label htmlFor="confirm-password">Conform Password</label>
+                            <input ref={ConfirmPasswordRef} type="password" name='confirm-password' placeholder='Enter your password' required />
+                        </div>
+                        <input className='form-submit' type="submit" value="Register" />
+                    </form>
+                    <p>Already have an account? <Link className='form-link' to="/login">login page</Link></p>
                 </div>
-                <div className="input_box">
-                    <span><MdEmail /></span>
-                    <input type="text" placeholder="Email" required />
-                </div>
-                <div className="input_box">
-                    <span><RiLockPasswordFill /></span>
-                    <input type="password" placeholder="Password" required />
-                </div>
-                <div className="input_box">
-                    <span><RiLockPasswordFill /></span>
-                    <input type="password" placeholder="Confirm Password" required />
-                </div>
-                <button type="submit" className='register-button'><FaSignInAlt className='me-3' />Register</button>
-            </form>
+            </div>
         </div>
     );
 };
