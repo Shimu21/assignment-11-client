@@ -5,6 +5,12 @@ const Blogs = () => {
     return (
         <div>
             <h2>This is blogs</h2>
+            <div>
+                h1
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     );
 };

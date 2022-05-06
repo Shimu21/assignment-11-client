@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar className='nabvar-bg' collapseOnSelect>
+        <Navbar className='nabvar-bg' collapseOnSelect expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img className='img-fluid' src="https://htmldemo.net/kidol/kidol/assets/img/logo.png" alt="" />

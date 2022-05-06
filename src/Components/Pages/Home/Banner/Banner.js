@@ -17,7 +17,7 @@ const Banner = () => {
                         </button>
                     </Col>
                     <Col sm={12} md={6}>
-                        <img src="https://htmldemo.net/kidol/kidol/assets/img/slider/2.png" alt="" />
+                        <img className='img-fluid' src="https://htmldemo.net/kidol/kidol/assets/img/slider/2.png" alt="" />
                     </Col>
                 </Row>
             </Container>

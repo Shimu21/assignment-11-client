@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
 
 
@@ -33,6 +34,7 @@ const Register = () => {
                         </div>
                         <input className='form-submit' type="submit" value="Login" />
                     </form>
+                    <SocialLogin />
                     <p>Already have an account? <Link className='form-link' to="/register">Register page</Link></p>
                 </div>
             </div>
