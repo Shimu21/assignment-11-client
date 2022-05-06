@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Service.css';
 
 const Service = (props) => {
-    const { name, price, quantity, supplier, description, img, id } = props.service;
+    const { name, price, quantity, supplier, description, img, _id } = props.service;
     const navigate = useNavigate();
     const handleInventory = (id) => {
         navigate(`/inventory/${id}`);
@@ -23,7 +23,7 @@ const Service = (props) => {
                         <p><small>Quantity: {quantity}</small></p>
                         <p><small>Supplier: {supplier}</small></p>
                     </div>
-                    <button onClick={() => handleInventory(id)} className='service-btn'>Stock Update</button>
+                    <button onClick={() => handleInventory(_id)} className='service-btn'>Stock Update</button>
                 </Card.Body>
             </Card>
         </Col>
