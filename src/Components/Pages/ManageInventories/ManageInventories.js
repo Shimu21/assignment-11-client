@@ -1,12 +1,21 @@
 import React from 'react';
 import './ManageInventories.css';
+import { Container, Row } from 'react-bootstrap';
+import useServices from '../../../Hook/useServices';
+import ShowEachItem from '../ShowEachItem/ShowEachItem';
 
 const ManageInventories = () => {
-    return (
-        <div>
-            <h2>Inventories section</h2>
+    const [services, setServices] = useServices();
 
-        </div>
+    return (
+        <Container>
+            <h2>This is manage inventory page</h2>
+            <Row>
+                {
+                    services.map(service => <ShowEachItem key={service._id} service={service}></ShowEachItem>)
+                }
+            </Row>
+        </Container >
     );
 };
 

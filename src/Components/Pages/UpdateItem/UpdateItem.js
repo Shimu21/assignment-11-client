@@ -1,48 +1,41 @@
 import React from 'react';
-import './AddItem.css';
+import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useForm } from "react-hook-form";
-import auth from '../../../firebase/firebase.init';
 
-const AddItem = () => {
-    const [user] = useAuthState(auth);
+const Update = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data, e) => {
-        console.log(data);
-
-        const url = `http://localhost:5000/services`;
-
-        fetch(url, {
-            method: "POST",
+    const { id } = useParams();
+    const onSubmit = async (updatedUser, e) => {
+        const url = `http://localhost:5000/services/${id}`;
+        await fetch(url, {
+            method: "PUT",
             headers: {
                 'content-type': "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(updatedUser)
         })
             .then(res => res.json())
-            .then(result => {
-                toast("Item added successful");
+            .then(data => {
+                toast('Item updated successful');
                 e.target.reset();
-            })
+            });
 
-    };
-
+    }
     return (
         <div className='w-50 mx-auto py-4'>
-            <h2 className='text-center my-3'>Add New Item</h2>
+            <h4 className='text-center my-3'>Updated Items</h4>
             <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
-                <input className='mb-3' placeholder='name' {...register("name")} required />
-                <input className='mb-3' placeholder='email' {...register("email")} value={user.email} readOnly required />
+                <input className='mb-3' placeholder='Name' {...register("name")} required />
                 <input className='mb-3' placeholder='Price' type="number" {...register("price")} required />
                 <input className='mb-3' placeholder='quantity' type="number" {...register("quantity")} required />
                 <input className='mb-3' placeholder='supplier' {...register("supplier")} required />
                 <textarea className='mb-3' placeholder='description' {...register("description")} required />
                 <input className='mb-3' placeholder='img' {...register("img")} required />
-                <input className='main-button' type="submit" value="Add Item" />
+                <input className="btn btn-primary" type="submit" value="update item" />
             </form>
         </div>
     );
 };
 
-export default AddItem;
+export default Update;

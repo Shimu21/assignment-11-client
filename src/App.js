@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ManageInventories from './Components/Pages/ManageInventories/ManageInventories';
 import AddItem from './Components/Pages/AddItem/AddItem';
 import MyItem from './Components/Pages/MyItem/MyItem';
+import Update from './Components/Pages/UpdateItem/UpdateItem';
 
 
 function App() {
@@ -50,6 +51,12 @@ function App() {
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/updateItem/:id' element={
+          <RequireAuth>
+            <Update></Update>
           </RequireAuth>
         }></Route>
 

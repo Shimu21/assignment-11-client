@@ -1,12 +1,12 @@
 import React from 'react';
-import './MyItem.css';
 
-const MyItem = () => {
+
+const MyItems = () => {
     return (
-        <div>
-            <h2>My items</h2>
+        <div style={{ height: "90vh" }}>
+            <h2>this is all added my items</h2>
         </div>
     );
 };
 
-export default MyItem;
+export default MyItems;

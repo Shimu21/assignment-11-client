@@ -1,7 +1,7 @@
 [
     {
-        "id": 1,
         "name": "ENGINE DIAGNOSTIC",
+        "email": "shaonshipa@gmail.com",
         "price": "300",
         "quantity": "4",
         "supplier": "Smit jonson",
@@ -9,8 +9,8 @@
         "img": "https://safestorage.in/assets/new_design_css/img/sofa.png"
     },
     {
-        "id": 2,
         "name": "WHEEL ALIGNMENT",
+        "email": "shaonshipa@gmail.com",
         "price": "100",
         "quantity": "4",
         "supplier": "Smit jonson",
@@ -18,8 +18,8 @@
         "img": "https://safestorage.in/assets/new_design_css/img/bad.png"
     },
     {
-        "id": 3,
         "name": "OIL CHANGING",
+        "email": "shaonshipa@gmail.com",
         "price": "150",
         "quantity": "4",
         "supplier": "Smit jonson",
@@ -27,8 +27,8 @@
         "img": "https://safestorage.in/assets/new_design_css/img/tv.png"
     },
     {
-        "id": 4,
         "name": "BRAKE REPARING",
+        "email": "shaonshipa@gmail.com",
         "price": "180",
         "quantity": "4",
         "supplier": "Smit jonson",
@@ -36,8 +36,8 @@
         "img": "https://safestorage.in/assets/new_design_css/img/files.png"
     },
     {
-        "id": 5,
         "name": "WASH AND GLASSING",
+        "email": "shaonshipa@gmail.com",
         "price": "100",
         "quantity": "4",
         "supplier": "Smit jonson",
@@ -45,8 +45,8 @@
         "img": "https://safestorage.in/upload/home/storage_type_images/service44.png"
     },
     {
-        "id": 6,
         "name": "COMPLETE ANALYSIS",
+        "email": "shaonshipa@gmail.com",
         "price": "300",
         "quantity": "4",
         "supplier": "Smit jonson",

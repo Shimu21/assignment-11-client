@@ -6,13 +6,14 @@ import useServices from '../../../../Hook/useServices';
 
 const Services = () => {
     const [services, setServices] = useServices();
+    const sixServices = services.slice(0, 6);
     return (
         <div className='my-5'>
             <Container>
                 <h1 className='section-title my-3'>Our Services</h1>
                 <Row>
                     {
-                        services?.map(service => <Service
+                        sixServices?.map(service => <Service
                             key={service._id}
                             service={service}
                         >
