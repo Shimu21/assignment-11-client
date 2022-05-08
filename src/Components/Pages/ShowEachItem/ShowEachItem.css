@@ -1,0 +1,7 @@
+.item-button {
+    border-radius: 5px;
+    border: 2px solid #222;
+    background-color: lightpink;
+    margin: 5px;
+    padding: 10px;
+}

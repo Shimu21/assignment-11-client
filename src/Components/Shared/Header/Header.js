@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../../firebase/firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
+import logo from '../../../Images/mainLogo.png';
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -12,7 +13,7 @@ const Header = () => {
         <Navbar className='nabvar-bg' collapseOnSelect expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img className='img-fluid' src="https://htmldemo.net/kidol/kidol/assets/img/logo.png" alt="" />
+                    <img className='img-fluid' src={logo} alt="" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

@@ -3,6 +3,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase/firebase.init';
+import axios from 'axios';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
 
@@ -37,12 +38,15 @@ const Register = () => {
         navigate(from, { replace: true });
     }
 
-    const handleLoinSubmit = (event) => {
+    const handleLoinSubmit = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
     };
 
     const handleResetPassword = async () => {

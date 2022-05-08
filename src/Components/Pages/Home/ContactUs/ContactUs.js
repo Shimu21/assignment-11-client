@@ -7,7 +7,7 @@ const ContactUs = () => {
     return (
         <div className='p-5'>
             <Container>
-                <h1 className='text-center my-4'>Contact With Us</h1>
+                <h1 className='text-center my-4'>Connect with us !!!</h1>
                 <Row>
                     <Col sm={12} md={6}>
                         <div>

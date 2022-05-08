@@ -3,13 +3,20 @@ import './ManageInventories.css';
 import { Container, Row } from 'react-bootstrap';
 import useServices from '../../../Hook/useServices';
 import ShowEachItem from '../ShowEachItem/ShowEachItem';
+import { useNavigate } from 'react-router-dom';
 
 const ManageInventories = () => {
-    const [services, setServices] = useServices();
+    const navigate = useNavigate();
+    const [services] = useServices();
 
     return (
         <Container>
-            <h2>This is manage inventory page</h2>
+            <div className='d-flex justify-content-center my-2'>
+                <div>
+                    <h2 className='mb-2'>Manage inventory page</h2>
+                    <button onClick={() => navigate('/addItem')} className='item-button'>Add a item</button>
+                </div>
+            </div>
             <Row>
                 {
                     services.map(service => <ShowEachItem key={service._id} service={service}></ShowEachItem>)

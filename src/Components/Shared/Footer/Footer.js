@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineTwitter, AiFillGoogleCircle } from 'react-icons/ai';
 import { FaFacebookF } from 'react-icons/fa';
 import { RiInstagramFill } from 'react-icons/ri';
+import logo from '../../../Images/mainLogo.png';
 
 
 
@@ -16,13 +17,15 @@ const Footer = () => {
                         <Col sm={12} md={6}>
                             <div className='d-flex justify-content-center align-items-center'>
                                 <div className='w-50'>
-                                    <img src="https://htmldemo.net/kidol/kidol/assets/img/logo-light.png" alt="" />
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi architecto, cupiditate quos illum consectetur facilis.</p>
+                                    <img src={logo} alt="" />
+                                    <p>
+                                        Well Organized and enough safety equipments are provided for product's storage.
+                                    </p>
                                     <div>
-                                        <AiOutlineTwitter></AiOutlineTwitter>
-                                        <AiFillGoogleCircle></AiFillGoogleCircle>
-                                        <FaFacebookF></FaFacebookF>
-                                        <RiInstagramFill></RiInstagramFill>
+                                        <AiOutlineTwitter className='m-2'></AiOutlineTwitter>
+                                        <AiFillGoogleCircle className='m-2'></AiFillGoogleCircle>
+                                        <FaFacebookF className='m-2'></FaFacebookF>
+                                        <RiInstagramFill className='m-2'></RiInstagramFill>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +35,7 @@ const Footer = () => {
                             <div className='d-flex justify-content-center align-items-center'>
                                 <div className='w-50'>
                                     <h2>Store Information.</h2>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem modi quasi corporis, similique ad facilis.</p>
+                                    <p>Well Organized and enough safety equipments are provided for product's storage.</p>
                                     <img src="https://htmldemo.net/kidol/kidol/assets/img/photos/payment1.png" alt="" />
 
                                 </div>
@@ -45,7 +48,7 @@ const Footer = () => {
             <Container className='text-center' fluid style={{ backgroundColor: "lightpink", padding: '20px 0px' }}>
                 &copy; {new Date().getFullYear()} Copyright: <Link to="/">shimu21ph@gmail.com</Link>
             </Container>
-        </footer>
+        </footer >
     );
 };
 

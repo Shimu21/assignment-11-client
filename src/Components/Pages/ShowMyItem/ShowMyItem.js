@@ -2,10 +2,9 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useServices from '../../../Hook/useServices';
-import './ShowEachItem.css';
 
-const ShowEachItem = ({ service }) => {
-    const { _id, name, price, quantity, supplier, img, email } = service;
+const ShowMyItem = (props) => {
+    const { _id, name, price, quantity, supplier, img, email } = props.item;
     const [services, setServices] = useServices();
     const navigate = useNavigate();
 
@@ -50,4 +49,4 @@ const ShowEachItem = ({ service }) => {
     );
 };
 
-export default ShowEachItem;
+export default ShowMyItem;

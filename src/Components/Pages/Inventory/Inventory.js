@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase/firebase.init';
 import useService from '../../../Hook/useService';
 import './Inventory.css';
 
 const Inventory = () => {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const email = user
     const numberRef = useRef();
@@ -94,6 +95,9 @@ const Inventory = () => {
                         </div>
                     </Col>
                 </Row>
+                <div className='d-flex justify-content-center'>
+                    <button className='item-button' onClick={() => navigate('/manageItems')}>Manage Inventory</button>
+                </div>
             </Container>
         </div>
     );

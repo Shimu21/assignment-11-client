@@ -9,7 +9,7 @@ const Banner = () => {
                 <Row className='d-flex justify-content-center align-items-center'>
                     <Col sm={12} md={6}>
                         <div className='banner-text'>
-                            <h1>Kids Toy Storage Solution</h1>
+                            <h1>Kiddo Toy Storage Solution</h1>
                             <h5>We ensure your product's safety</h5>
                         </div>
                         <button className='banner-button'>
