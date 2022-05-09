@@ -1,6 +1,7 @@
 .card-img {
-    height: 150px !important;
+    width: 275px !important;
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 .service-btn {

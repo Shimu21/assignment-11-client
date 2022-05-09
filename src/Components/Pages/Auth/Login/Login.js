@@ -9,7 +9,7 @@ import './Login.css';
 import useToken from '../../../../Hook/useToken';
 
 
-const Register = () => {
+const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const [
@@ -21,10 +21,10 @@ const Register = () => {
     const [sendPasswordResetEmail, sending, passError] = useSendPasswordResetEmail(
         auth
     );
-    const [token] = useToken(user);
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
+    const [token] = useToken(user);
 
     let showError;
     if (error || passError) {
@@ -46,6 +46,8 @@ const Register = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post(`https://blooming-mountain-38206.herokuapp.com/login`, { email })
+        localStorage.setItem('accessToken', data.accessToken);
     };
 
     const handleResetPassword = async () => {
@@ -83,4 +85,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

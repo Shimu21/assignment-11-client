@@ -25,7 +25,7 @@ const Header = () => {
                             user && <>
                                 <Nav.Link className='link-style' as={Link} to="/manageItems">Manage Items</Nav.Link>
                                 <Nav.Link className='link-style' as={Link} to="/addItem">Add Item</Nav.Link>
-                                <Nav.Link className='link-style' as={Link} to="/myItem">My Item</Nav.Link>
+                                <Nav.Link className='link-style' as={Link} to="/myItems">My Item</Nav.Link>
                             </>
                         }
                     </Nav>

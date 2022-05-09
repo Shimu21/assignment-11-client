@@ -27,7 +27,7 @@ const ShowMyItem = (props) => {
 
     return (
         <Col sm={12} md={3} className='d-flex'>
-            <div className="card">
+            <div className="card my-3">
                 <div className="card-body">
                     <img className='img-fluid' src={img} alt="" />
                     <h5 className="card-title">{name}</h5>

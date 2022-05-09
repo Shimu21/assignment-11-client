@@ -28,11 +28,10 @@ const ShowEachItem = ({ service }) => {
 
     return (
         <Col sm={12} md={3} className='d-flex'>
-            <div className="card">
+            <div className="card my-3">
                 <div className="card-body">
                     <img className='img-fluid' src={img} alt="" />
                     <h5 className="card-title">{name}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p className="card-text"></p>
                     <div className="card">
                         <ul className="list-group list-group-flush">

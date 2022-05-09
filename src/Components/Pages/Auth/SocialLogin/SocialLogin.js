@@ -9,8 +9,8 @@ const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/';
     const [token] = useToken(user);
+    const from = location.state?.from?.pathname || '/';
 
     let showError;
     if (error) {

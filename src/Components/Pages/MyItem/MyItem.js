@@ -3,9 +3,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase/firebase.init';
 import ShowMyItem from '../ShowMyItem/ShowMyItem';
 import { Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import axiosPrivate from '../../../api/axiosPrivate';
-import { useNavigate } from 'react-router-dom';
 
 const MyItems = () => {
     const navigate = useNavigate();
@@ -16,15 +16,15 @@ const MyItems = () => {
         const getServices = async () => {
             const email = user?.email;
             const url = `https://blooming-mountain-38206.herokuapp.com/myItems?email=${email}`;
-
             try {
                 const { data } = await axiosPrivate.get(url);
                 setMyItems(data);
             }
             catch (error) {
+                console.log(error.message);
                 if (error.response.status === 401 || error.response.status === 403) {
+                    navigate('/login');
                     signOut(auth);
-                    navigate('/login')
                 }
             }
         }

@@ -12,7 +12,7 @@ const ManageInventories = () => {
     return (
         <Container>
             <div className='my-2'>
-                <h2 className='mb-2 text-center fw-bold'>Manage inventory page</h2>
+                <h2 className='mb-2 text-center fw-bold'>Manage Inventory</h2>
                 <button onClick={() => navigate('/addItem')} className='item-button'>Add a item</button>
             </div>
             <Row>
