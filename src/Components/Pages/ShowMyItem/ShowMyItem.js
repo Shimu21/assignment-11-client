@@ -12,7 +12,7 @@ const ShowMyItem = (props) => {
 
         const proceed = window.confirm("Are you sure?");
         if (proceed) {
-            const url = `http://localhost:5000/services/${id}`;
+            const url = `https://blooming-mountain-38206.herokuapp.com/services/${id}`;
             await fetch(url, {
                 method: "DELETE"
             })

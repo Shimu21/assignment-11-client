@@ -4,6 +4,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Register.css';
 import auth from '../../../../firebase/firebase.init';
+import useToken from '../../../../Hook/useToken';
 
 const Register = () => {
     const emailRef = useRef();
@@ -17,6 +18,7 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [token] = useToken(user);
 
     let showError;
     if (error) {
@@ -28,7 +30,7 @@ const Register = () => {
         showLoading = <p>Loading...</p>
     }
 
-    if (user) {
+    if (token) {
         navigate('/home');
     }
 

@@ -28,7 +28,7 @@ const Inventory = () => {
 
 
     const handleDeliver = async (newQuantity) => {
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://blooming-mountain-38206.herokuapp.com/services/${id}`;
         await fetch(url, {
             method: "PUT",
             headers: {
@@ -55,7 +55,7 @@ const Inventory = () => {
             email: email
         };
 
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://blooming-mountain-38206.herokuapp.com/services/${id}`;
         await fetch(url, {
             method: "PUT",
             headers: {

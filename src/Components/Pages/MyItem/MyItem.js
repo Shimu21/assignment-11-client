@@ -1,31 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase/firebase.init';
-import axios from 'axios';
 import ShowMyItem from '../ShowMyItem/ShowMyItem';
 import { Container, Row } from 'react-bootstrap';
+import { signOut } from 'firebase/auth';
+import axiosPrivate from '../../../api/axiosPrivate';
+import { useNavigate } from 'react-router-dom';
 
 const MyItems = () => {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
 
     useEffect(() => {
         const getServices = async () => {
-            const email = user.email;
-            const url = `http://localhost:5000/myItem?email=${email}`;
-            console.log(url);
-            const { data } = await axios.get(url);
-            setMyItems(data);
+            const email = user?.email;
+            const url = `https://blooming-mountain-38206.herokuapp.com/myItems?email=${email}`;
+
+            try {
+                const { data } = await axiosPrivate.get(url);
+                setMyItems(data);
+            }
+            catch (error) {
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth);
+                    navigate('/login')
+                }
+            }
         }
         getServices();
     }, [user]);
 
     return (
-        <Container style={{ height: "90vh" }}>
+        <Container>
             <h2 className='text-center'>My items</h2>
             <Row>
                 {
-                    myItems.map(item => <ShowMyItem key={item._id} item={item}></ShowMyItem>)
+                    myItems?.map(item => <ShowMyItem key={item._id} item={item}></ShowMyItem>)
                 }
             </Row>
         </Container>

@@ -7,7 +7,7 @@ const Update = () => {
     const { register, handleSubmit } = useForm();
     const { id } = useParams();
     const onSubmit = async (updatedUser, e) => {
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://blooming-mountain-38206.herokuapp.com/services/${id}`;
         await fetch(url, {
             method: "PUT",
             headers: {

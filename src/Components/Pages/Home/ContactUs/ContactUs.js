@@ -28,9 +28,9 @@ const ContactUs = () => {
                             <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
                                 <Form.Control as="textarea" placeholder="Leave a comment here" />
                             </FloatingLabel>
-                            <Button variant="primary" type="submit">
+                            <button className='contact-btn' type="submit">
                                 Submit
-                            </Button>
+                            </button>
                         </Form>
                     </Col>
                 </Row>

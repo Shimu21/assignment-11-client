@@ -6,6 +6,7 @@ import auth from '../../../../firebase/firebase.init';
 import axios from 'axios';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
+import useToken from '../../../../Hook/useToken';
 
 
 const Register = () => {
@@ -20,6 +21,7 @@ const Register = () => {
     const [sendPasswordResetEmail, sending, passError] = useSendPasswordResetEmail(
         auth
     );
+    const [token] = useToken(user);
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ const Register = () => {
         showLoading = <p>Loading...</p>
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -44,9 +46,6 @@ const Register = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email })
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
     };
 
     const handleResetPassword = async () => {

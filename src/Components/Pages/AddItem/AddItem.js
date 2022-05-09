@@ -11,7 +11,7 @@ const AddItem = () => {
     const onSubmit = (data, e) => {
         console.log(data);
 
-        const url = `http://localhost:5000/services`;
+        const url = `https://blooming-mountain-38206.herokuapp.com/services`;
 
         fetch(url, {
             method: "POST",

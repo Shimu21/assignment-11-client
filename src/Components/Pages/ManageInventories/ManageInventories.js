@@ -11,11 +11,9 @@ const ManageInventories = () => {
 
     return (
         <Container>
-            <div className='d-flex justify-content-center my-2'>
-                <div>
-                    <h2 className='mb-2'>Manage inventory page</h2>
-                    <button onClick={() => navigate('/addItem')} className='item-button'>Add a item</button>
-                </div>
+            <div className='my-2'>
+                <h2 className='mb-2 text-center fw-bold'>Manage inventory page</h2>
+                <button onClick={() => navigate('/addItem')} className='item-button'>Add a item</button>
             </div>
             <Row>
                 {
