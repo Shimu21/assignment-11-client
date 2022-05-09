@@ -3,6 +3,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase/firebase.init';
+import axios from 'axios';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css';
 import useToken from '../../../../Hook/useToken';
@@ -44,6 +45,8 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
+        const { data } = await axios.post(`https://blooming-mountain-38206.herokuapp.com/login`, { email })
+        localStorage.setItem('accessToken', data.accessToken);
         await signInWithEmailAndPassword(email, password)
     };
 

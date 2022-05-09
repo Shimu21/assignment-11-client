@@ -25,6 +25,7 @@ const SocialLogin = () => {
     if (token) {
         navigate(from, { replace: true });
     }
+
     return (
         <div>
             <div className='d-flex'>
