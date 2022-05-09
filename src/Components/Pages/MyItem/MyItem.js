@@ -33,7 +33,7 @@ const MyItems = () => {
 
     return (
         <Container>
-            <h2 className='text-center'>My items</h2>
+            <h2 className='text-center'>My Items</h2>
             <Row>
                 {
                     myItems?.map(item => <ShowMyItem key={item._id} item={item}></ShowMyItem>)
